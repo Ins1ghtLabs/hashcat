@@ -24,7 +24,13 @@ char   *status_get_status_string              (const hashcat_ctx_t *hashcat_ctx)
 int     status_get_status_number              (const hashcat_ctx_t *hashcat_ctx);
 int     status_get_input_mode                 (const hashcat_ctx_t *hashcat_ctx);
 char   *status_get_input_base                 (const hashcat_ctx_t *hashcat_ctx);
+int     status_get_input_base_offset          (const hashcat_ctx_t *hashcat_ctx);
+int     status_get_input_base_count           (const hashcat_ctx_t *hashcat_ctx);
+double  status_get_input_base_percent         (const hashcat_ctx_t *hashcat_ctx);
 char   *status_get_input_mod                  (const hashcat_ctx_t *hashcat_ctx);
+int     status_get_input_mod_offset           (const hashcat_ctx_t *hashcat_ctx);
+int     status_get_input_mod_count            (const hashcat_ctx_t *hashcat_ctx);
+double  status_get_input_mod_percent          (const hashcat_ctx_t *hashcat_ctx);
 char   *status_get_input_charset              (const hashcat_ctx_t *hashcat_ctx);
 int     status_get_input_mask_length          (const hashcat_ctx_t *hashcat_ctx);
 char   *status_get_input_candidates_dev       (const hashcat_ctx_t *hashcat_ctx, const int device_id);
@@ -73,6 +79,8 @@ double  status_get_cpt_avg_hour               (const hashcat_ctx_t *hashcat_ctx)
 double  status_get_cpt_avg_day                (const hashcat_ctx_t *hashcat_ctx);
 char   *status_get_cpt                        (const hashcat_ctx_t *hashcat_ctx);
 char   *status_get_hwmon_dev                  (const hashcat_ctx_t *hashcat_ctx, const int device_id);
+int     status_get_corespeed_dev              (const hashcat_ctx_t *hashcat_ctx, const int device_id);
+int     status_get_memoryspeed_dev            (const hashcat_ctx_t *hashcat_ctx, const int device_id);
 
 int     status_progress_init                  (hashcat_ctx_t *hashcat_ctx);
 void    status_progress_destroy               (hashcat_ctx_t *hashcat_ctx);

@@ -1518,7 +1518,7 @@ typedef struct mask_ctx
 {
   bool   enabled;
 
-  cs_t   mp_sys[6];
+  cs_t   mp_sys[8];
   cs_t   mp_usr[4];
 
   u64    bfs_cnt;
@@ -1565,6 +1565,8 @@ typedef struct
   char   *speed_sec_dev;
   char   *input_candidates_dev;
   char   *hwmon_dev;
+  int     corespeed_dev;
+  int     memoryspeed_dev;
 
 } device_info_t;
 
@@ -1574,8 +1576,14 @@ typedef struct
   char   *hash_type;
   int     input_mode;
   char   *input_base;
-  char   *input_charset;
+  int     input_base_offset;
+  int     input_base_count;
+  double  input_base_percent;
   char   *input_mod;
+  int     input_mod_offset;
+  int     input_mod_count;
+  double  input_mod_percent;
+  char   *input_charset;
   int     input_mask_length;
   char   *session;
   char   *status_string;

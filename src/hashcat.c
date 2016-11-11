@@ -1188,10 +1188,16 @@ int hashcat_get_status (hashcat_ctx_t *hashcat_ctx, hashcat_status_t *hashcat_st
   hashcat_status->hash_target                 = status_get_hash_target                (hashcat_ctx);
   hashcat_status->hash_type                   = status_get_hash_type                  (hashcat_ctx);
   hashcat_status->input_base                  = status_get_input_base                 (hashcat_ctx);
+  hashcat_status->input_base_offset           = status_get_input_base_offset          (hashcat_ctx);
+  hashcat_status->input_base_count            = status_get_input_base_count           (hashcat_ctx);
+  hashcat_status->input_base_percent          = status_get_input_base_percent         (hashcat_ctx);
+  hashcat_status->input_mod                   = status_get_input_mod                  (hashcat_ctx);
+  hashcat_status->input_mod_offset            = status_get_input_mod_offset           (hashcat_ctx);
+  hashcat_status->input_mod_count             = status_get_input_mod_count            (hashcat_ctx);
+  hashcat_status->input_mod_percent           = status_get_input_mod_percent          (hashcat_ctx);
   hashcat_status->input_charset               = status_get_input_charset              (hashcat_ctx);
   hashcat_status->input_mask_length           = status_get_input_mask_length          (hashcat_ctx);
   hashcat_status->input_mode                  = status_get_input_mode                 (hashcat_ctx);
-  hashcat_status->input_mod                   = status_get_input_mod                  (hashcat_ctx);
   hashcat_status->msec_paused                 = status_get_msec_paused                (hashcat_ctx);
   hashcat_status->msec_running                = status_get_msec_running               (hashcat_ctx);
   hashcat_status->msec_real                   = status_get_msec_real                  (hashcat_ctx);
@@ -1244,6 +1250,8 @@ int hashcat_get_status (hashcat_ctx_t *hashcat_ctx, hashcat_status_t *hashcat_st
     device_info->speed_sec_dev              = status_get_speed_sec_dev              (hashcat_ctx, device_id);
     device_info->input_candidates_dev       = status_get_input_candidates_dev       (hashcat_ctx, device_id);
     device_info->hwmon_dev                  = status_get_hwmon_dev                  (hashcat_ctx, device_id);
+    device_info->corespeed_dev              = status_get_corespeed_dev              (hashcat_ctx, device_id);
+    device_info->memoryspeed_dev            = status_get_memoryspeed_dev            (hashcat_ctx, device_id);
   }
 
   hashcat_status->hashes_msec_all = status_get_hashes_msec_all (hashcat_ctx);
